@@ -13,14 +13,15 @@ package controller
 
 import (
 	_ "fmt"
+	md "gin-jwt-token/middleware"
+	"gin-jwt-token/model"
 	"log"
 	"net/http"
 	"time"
-	md "gin-jwt-token/middleware"
-	"gin-jwt-token/model"
 
-	jwtgo "github.com/dgrijalva/jwt-go"
+	// jwtgo "github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
+	jwtgo "github.com/golang-jwt/jwt/v4"
 )
 
 // 用户注册信息
