@@ -17,6 +17,8 @@ import (
 	"gin-jwt-token/model"
 
 	"github.com/gin-gonic/gin"
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 func main() {
@@ -33,6 +35,15 @@ func main() {
 	router := gin.Default()
 	// 使用expvar 暴露内部指标
 	router.GET("/debug/vars", gin.WrapH(expvar.Handler()))
+
+	// http metrics
+	router.GET("/metrics", gin.WrapH(promhttp.Handler()))
+	temp := prometheus.NewGauge(prometheus.GaugeOpts{
+		Name: "temperature_celsius",
+		Help: "The current temperature in degrees Celsius.",
+	})
+	prometheus.MustRegister(temp)
+	temp.Set(88)
 
 	// 定义api
 	v1 := router.Group("/apis/v1/")
