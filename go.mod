@@ -1,4 +1,4 @@
-module warnning-trigger
+module gin-jwt-token
 
 go 1.12
 
@@ -8,4 +8,5 @@ require (
 	github.com/jinzhu/gorm v1.9.12
 	github.com/spf13/viper v1.6.2
 	github.com/zmb3/gogetdoc v0.0.0-20190228002656-b37376c5da6a // indirect
+	golang.org/x/sys v0.0.0-20220928140112-f11e5e49a4ec // indirect
 )

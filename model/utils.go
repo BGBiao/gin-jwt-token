@@ -11,7 +11,7 @@ package model
 
 import (
     "fmt"
-    "warnning-trigger/api"
+    "gin-jwt-token/api"
     
     "github.com/jinzhu/gorm"
     _ "github.com/jinzhu/gorm/dialects/mysql"

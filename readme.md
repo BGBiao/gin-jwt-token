@@ -11,8 +11,12 @@ $ docker run -itd -e MYSQL_ROOT_PASSWORD='bgbiao.top' --name go-orm-mysql  -p 13
 
 ```
 
+`注意: 在配置之前，请创建相关数据库`
+
 之后，在项目的`config/config.ini`文件中修改数据库相关的配置即可。
 
+
+**运行服务**
 
 ```
 # 运行项目
@@ -26,9 +30,9 @@ root:bgbiao.top@tcp(127.0.0.1:13306)/test_api?charset=utf8mb4&parseTime=True&loc
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] POST   /apis/v1/register         --> warnning-trigger/controller.RegisterUser (3 handlers)
-[GIN-debug] POST   /apis/v1/login            --> warnning-trigger/controller.Login (3 handlers)
-[GIN-debug] GET    /apis/v1/auth/time        --> warnning-trigger/controller.GetDataByTime (4 handlers)
+[GIN-debug] POST   /apis/v1/register         --> gin-jwt-token/controller.RegisterUser (3 handlers)
+[GIN-debug] POST   /apis/v1/login            --> gin-jwt-token/controller.Login (3 handlers)
+[GIN-debug] GET    /apis/v1/auth/time        --> gin-jwt-token/controller.GetDataByTime (4 handlers)
 [GIN-debug] Listening and serving HTTP on :8081
 
 # 注册用户

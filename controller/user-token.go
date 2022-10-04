@@ -16,8 +16,8 @@ import (
 	"log"
 	"net/http"
 	"time"
-	md "warnning-trigger/middleware"
-	"warnning-trigger/model"
+	md "gin-jwt-token/middleware"
+	"gin-jwt-token/model"
 
 	jwtgo "github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
